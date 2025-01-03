@@ -4,6 +4,7 @@ https://www.vulnhub.com/entry/zico2-1,210/
 ## Recon
 
 ### Nmap Scan
+<div>
 PORT      STATE SERVICE VERSION
 22/tcp    open  ssh     OpenSSH 5.9p1 Debian 5ubuntu1.10 (Ubuntu Linux; protocol 2.0)
 | ssh-hostkey: 
@@ -25,6 +26,7 @@ PORT      STATE SERVICE VERSION
 |   100024  1          44868/udp6  status
 |_  100024  1          59995/tcp6  status
 43168/tcp open  status  1 (RPC #100024)
+</div>
 
 ### Web Recon
 Port 80 shows a simple home page for a website, looking through the site manually and I was able to find an LFI vulnerability under the /view.php?page= endpoint, with this I was able to read the /etc/passwd file and enumerate users on the machine.
